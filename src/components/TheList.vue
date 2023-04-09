@@ -32,10 +32,10 @@ store.dispatch("updateNotiz", id)
     <div class="date">{{ data.date }}</div>
     <div id="flexbox">
       <div>
-    <button @click="updateNotiz(data.id)"  class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+    <button @click="updateNotiz(data.id)"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
   Update
 </button>
-<button @click ="deleteNotiz(data.id)" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+<button @click ="deleteNotiz(data.id)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-1">
   Delete
 </button>
 </div>

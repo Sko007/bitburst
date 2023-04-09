@@ -6,7 +6,7 @@ const store = createStore({
   state () {
     return {
       data: data,
-      notizen: [{id:0, headline:"I want to work at Bitburst", text:"programmieren remote", date:new Date()}],
+      notizen: [{id:0, headline:"I want to work at Bitburst", text:"programmieren remote", date:new Date().toString().slice(0,24)}],
       notiz:[],
       clicked:false,
       currentID: 0

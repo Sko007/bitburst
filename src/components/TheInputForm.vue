@@ -51,13 +51,13 @@ function submit(){
   
  
   form.id = form.id + 1
-  
-  store.dispatch("addNotiz", {id:form.id, headline:form.headline, text:form.text, date: new Date()})
+ 
+  store.dispatch("addNotiz", {id:form.id, headline:form.headline, text:form.text, date: new Date().toString().slice(0,24)})
   form.headline = ""
   form.text = ""
 }else{
 console.log("check if else statement is executed")
-store.dispatch("addNotiz", {id:form.id, headline:form.headline, text:form.text, date: new Date()})
+store.dispatch("addNotiz", {id:form.id, headline:form.headline, text:form.text, date: new Date().toString().slice(0,24)})
   form.headline = ""
   form.text = ""
 
@@ -71,9 +71,9 @@ store.dispatch("addNotiz", {id:form.id, headline:form.headline, text:form.text, 
 </script>
 
 <template>
-  <div class="greetings mt-24">
+  <div class="greetings mt-16">
     <div class="w-full max-w-xs">
-  <form class="bg-white rounded  mb-4">
+  <form type="submit" class="bg-white rounded  mb-4">
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
         Headline
