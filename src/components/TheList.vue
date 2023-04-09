@@ -8,7 +8,7 @@ let dataItems = store.state.notizen
 const addClass = ref(false)
 console.log("addClass", addClass)
 
-function changeClass(data){
+function changeClass(data: any){
 data.done =!data.done
 
 }
@@ -57,7 +57,7 @@ store.dispatch("updateNotiz", id)
 }
 .active{
   color:black;
-  background-color: green;
+  background-color:#EEEEEE;
   opacity: 0.9;
 
 

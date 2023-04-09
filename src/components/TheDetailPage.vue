@@ -8,7 +8,7 @@ let dataItems = store.state.notizen
 const addClass = ref(false)
 console.log("addClass", addClass)
 
-function changeClass(data){
+function changeClass(data :any){
 data.done =!data.done
 
 }
