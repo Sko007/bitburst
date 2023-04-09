@@ -9,8 +9,7 @@ import TheInputForm from './components/TheInputForm.vue'
 
     <div class="wrapper">
       <TheInputForm />
-      <nav>
-      </nav>
+      
     </div>
   </header>
 

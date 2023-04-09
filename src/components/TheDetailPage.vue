@@ -25,7 +25,7 @@ store.dispatch("updateNotiz", id)
 <template>
 <div v-for="data, key, index in dataItems" class="max-w-sm rounded overflow-hidden shadow-lg mt-6" >   
   <div  class="px-6 py-4" :class="{active: data.done}" >
-    <router-link class="router" :to="{ name: 'detail', params: { id: key }}"><div class="font-bold text-xl mb-2">{{ data.headline }}</div></router-link>
+   <div class="font-bold text-xl mb-2">{{ data.headline }}</div>
     <p class="text-gray-700 text-base">
       {{ data.text }}
     </p>
@@ -59,11 +59,6 @@ store.dispatch("updateNotiz", id)
   color:black;
   background-color: green;
   opacity: 0.9;
-
-
-}
-.router{
-color:black;
 
 
 }
