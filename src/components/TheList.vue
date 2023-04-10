@@ -59,6 +59,7 @@ store.dispatch("updateNotiz", id)
   color:black;
   background-color:#EEEEEE;
   opacity: 0.9;
+  text-decoration: line-through;
 
 
 }

@@ -47,16 +47,11 @@ const text = computed({
 //submit function
 function submit(){
  if(store.state.clicked === false){
-
-  
- 
   form.id = form.id + 1
- 
   store.dispatch("addNotiz", {id:form.id, headline:form.headline, text:form.text, date: new Date().toString().slice(0,24)})
   form.headline = ""
   form.text = ""
 }else{
-console.log("check if else statement is executed")
 store.dispatch("addNotiz", {id:form.id, headline:form.headline, text:form.text, date: new Date().toString().slice(0,24)})
   form.headline = ""
   form.text = ""
