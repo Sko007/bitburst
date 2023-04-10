@@ -39,9 +39,11 @@ store.dispatch("updateNotiz", id)
   Delete
 </button>
 </div>
-<button @click="changeClass(data)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+<div><button @click="changeClass(data)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
   Done
 </button>
+</div>
+
 </div>
   </div>
 </div>
