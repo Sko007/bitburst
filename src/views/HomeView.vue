@@ -5,7 +5,7 @@ import TheList from '../components/TheList.vue'
 
 <template>
   <main>
-    <TheList />
+    <TheList  />
 
   </main>
 </template>

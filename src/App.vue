@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import TheInputForm from './components/TheInputForm.vue'
+import TheBacklog from "./components/TheBacklog.vue"
 </script>
 
 <template>
+    
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/Capture.png" width="125" height="125" />
 
@@ -11,9 +13,17 @@ import TheInputForm from './components/TheInputForm.vue'
       <TheInputForm />
       
     </div>
+  
   </header>
+ 
 
   <RouterView ></RouterView>
+  <nav> 
+   
+    <RouterLink class="router" to="/">Home</RouterLink>
+    <RouterLink class="router" to="backlog">Backlog</RouterLink>
+
+  </nav>
 </template>
 
 <style scoped>
@@ -22,6 +32,17 @@ header {
   max-height: 100vh;
 }
 
+
+.router{
+
+  color:black;
+ 
+}
+.router:hover{
+background-color: white;
+opacity: 0.6;
+
+}
 .logo {
   display: block;
   margin: 0 auto 2rem;

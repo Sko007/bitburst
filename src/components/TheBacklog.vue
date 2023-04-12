@@ -13,10 +13,7 @@ function changeClass(data: any){
 data.done =!data.done
 
 }
-function backlog(id: Number){
-  store.dispatch("addToBacklog", id)
-
-}
+const backlogitems = store.state.backlog
 
 function deleteNotiz(id: Number){
 store.dispatch("deleteNotiz", id)
@@ -28,7 +25,7 @@ store.dispatch("updateNotiz", id)
 </script>
 
 <template>
-<div v-for="data, key, index in dataItems" class="max-w-sm rounded overflow-hidden shadow-lg mt-6" >   
+<div v-for="data, key, index in backlogitems" class="max-w-sm rounded overflow-hidden shadow-lg mt-6" >   
       <div  class="px-6 py-4" :class="{active: data.done}" >
     <router-link class="router" :to="{ name: 'detail', params: { id: key }}"><div class="font-bold text-xl mb-2">{{ data.headline }}</div></router-link>
     <p class="text-gray-700 text-base">
@@ -37,18 +34,12 @@ store.dispatch("updateNotiz", id)
     <div class="date">{{ data.date }}</div>
     <div id="flexbox">
       <div>
-    <button @click="updateNotiz(data.id)"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-  Update
-</button>
 <button @click ="deleteNotiz(data.id)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-1">
   Delete
 </button>
 </div>
 <div><button @click="changeClass(data)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
   Done
-</button>
-<button @click="backlog(data.id)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
- Backlog
 </button>
 </div>
 
@@ -68,8 +59,8 @@ store.dispatch("updateNotiz", id)
 }
 .active{
   color:black;
-  opacity: 0.8;
-  /* background-color:#EEEEEE; */
+  background-color:#EEEEEE;
+  opacity: 0.9;
   text-decoration: line-through;
 
 

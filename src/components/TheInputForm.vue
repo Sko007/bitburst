@@ -28,7 +28,6 @@ const headline = computed({
     return form.headline
   },
   set(val) {
-    
     form.headline = val
   }
 })

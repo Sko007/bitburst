@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Backlog from '../views/BacklogView.vue'
 //import DetailView from '../views/DetailView.vue'
 
 //import "../assets/main.css"
@@ -26,7 +27,12 @@ const router = createRouter({
       path: '/detail/:id',
       name: 'detail',
       component: () => import('../views/DetailView.vue')
-    }
+    },{
+    
+    path: '/backlog',
+    name: 'backlog',
+    component: () => import('../views/BacklogView.vue')
+  }
   ]
 })
 

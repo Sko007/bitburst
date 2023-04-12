@@ -55,13 +55,7 @@ store.dispatch("updateNotiz", id)
 
 
 }
-.active{
-  color:black;
-  background-color: green;
-  opacity: 0.9;
 
-
-}
 
 
 
