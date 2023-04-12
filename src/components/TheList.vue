@@ -7,7 +7,11 @@ import { FadeInOut } from 'vue3-transitions'
 const store = useStore()
 let dataItems = store.state.notizen
 let show = ref(false);
-const isOpen = () => (show.value = !show.value);
+let currentId = 0
+function isOpen (id) {
+currentId = id
+  
+  show.value = !show.value};
 function changeClass(data: any){
 data.done =!data.done
 
@@ -49,7 +53,7 @@ store.dispatch("updateNotiz", id)
     <div class="relative">
       <!-- Dropdown toggle button -->
       <button
-        @click="isOpen"
+        @click="isOpen(data.id)"
         class="flex items-center p-2 text-indigo-100 bg-blue-700 rounded-md"
       >
         <span class="mr-4">...</span>
@@ -69,6 +73,7 @@ store.dispatch("updateNotiz", id)
 
       <!-- Dropdown menu -->
       <div
+        v-if="currentId === data.id"
         v-show="show"
         class="abs absolute right-0 py-2 mt-2 bg-blue-700 rounded-md shadow-xl  w-44"
       >
