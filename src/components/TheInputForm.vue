@@ -17,6 +17,7 @@ watch(() => store.state.clicked, function() {
       console.log('value changes detected',store.state.notiz);
       form.headline = store.state.notiz.headline
       form.text = store.state.notiz.text
+      
    });
 
 computed(() => store.state.clicked)

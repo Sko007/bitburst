@@ -6,9 +6,8 @@ import { FadeInOut } from 'vue3-transitions'
 
 const store = useStore()
 let dataItems = store.state.notizen
-const addClass = ref(false)
-const triggerFade = ref(false)
-
+let show = ref(false);
+const isOpen = () => (show.value = !show.value);
 function changeClass(data: any){
 data.done =!data.done
 
@@ -44,21 +43,64 @@ store.dispatch("updateNotiz", id)
   Delete
 </button>
 </div>
-<div><button @click="changeClass(data)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-  Done
-</button>
-<button @click="backlog(data.id)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
- Backlog
-</button>
-</div>
 
-</div>
+<div>
+  
+    <div class="relative">
+      <!-- Dropdown toggle button -->
+      <button
+        @click="isOpen"
+        class="flex items-center p-2 text-indigo-100 bg-blue-700 rounded-md"
+      >
+        <span class="mr-4">...</span>
+        <svg
+          class="w-5 h-5 text-indigo-100 dark:text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
+
+      <!-- Dropdown menu -->
+      <div
+        v-show="show"
+        class="abs absolute right-0 py-2 mt-2 bg-blue-700 rounded-md shadow-xl  w-44"
+      >
+      
+          <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="changeClass(data)">done</button>
+        
+          <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="backlog(data.id)">Backlog</button>
+        
+        
+      </div>
+    </div>
+  </div>       
+    
   </div>
+
+
+  </div>
+
+
+  
 
 </div>
 </template>
 
 <style>
+.abs{
+  display:flex;
+position: fixed;
+z-index:99999999999999999999999999999999999999999999999999999999999999999999;
+
+}
+
 #flexbox{
   display: flex;
   flex-direction: row;
