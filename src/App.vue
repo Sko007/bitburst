@@ -14,7 +14,7 @@ import TheBacklog from "./components/TheBacklog.vue"
 
       <nav> 
    <div class="center">
-   <RouterLink class="router" to="/">Home</RouterLink>
+   <RouterLink class="router" to="/">Notizen</RouterLink>
    <RouterLink class="router" to="backlog">Backlog</RouterLink>
   </div>
  </nav>
