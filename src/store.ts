@@ -18,7 +18,7 @@ const store = createStore({
     addNotiz (state, notiz: any){
       if(state.clicked === true){
         const addNotiz = state.notizen.push(notiz)
-        state.notiz = []
+        //state.notiz = []
         const findIndex = state.notizen.findIndex(notiz => notiz.id == state.currentID)
         state.notizen.splice(findIndex,1)
         //backlog
@@ -26,7 +26,7 @@ const store = createStore({
         // const findIndexBacklog = state.backlog.findIndex(notiz => notiz.id == state.currentID)
         // state.backlog.splice(findIndexBacklog,1)
       }else{
-        state.notiz = []
+        //state.notiz = []
         const addNotiz = state.notizen.push(notiz)
 
         // state.backlogNotiz = []

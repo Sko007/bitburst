@@ -7,11 +7,13 @@ import { FadeInOut } from 'vue3-transitions'
 const store = useStore()
 let dataItems = store.state.notizen
 let show = ref(false);
-let currentId = 0
+let currentId = ref(0) 
 function isOpen (id) {
-currentId = id
-  console.log(show, show.value)
-  show.value = !show.value};
+currentId.value = id
+  console.log(show, show.value, currentId)
+  show.value = !show.value
+};
+
 function changeClass(data: any){
 data.done =!data.done
 
@@ -56,7 +58,7 @@ store.dispatch("updateNotiz", id)
         @click="isOpen(data.id)"
         class="flex items-center p-2 text-indigo-100 bg-blue-700 rounded-md"
       >
-        <span class="mr-4">...</span>
+        <span class="mr-4"></span>
         <svg
           class="w-5 h-5 text-indigo-100 dark:text-white"
           xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +82,7 @@ store.dispatch("updateNotiz", id)
   </div>
   <div class="flexbox">  <div
         v-if="currentId === data.id"
-        v-show="show"
+        v-show="show === true"
         class="abs left-0 py-2 mt-2 bg-blue-600 rounded-md shadow-xl "
       >
       
