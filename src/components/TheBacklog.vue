@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { useStore } from 'vuex';
-import {ref} from 'vue'
+import {ref, reactive} from 'vue'
 import { FadeInOut } from 'vue3-transitions'
 
 
 const store = useStore()
-let dataItems = store.state.notizen
-const addClass = ref(false)
-const triggerFade = ref(false)
+const state = reactive({
+    backlogClicked : true
+
+
+})
 
 function changeClass(data: any){
 data.done =!data.done
@@ -16,7 +18,8 @@ data.done =!data.done
 const backlogitems = store.state.backlog
 
 function deleteNotiz(id: Number){
-store.dispatch("deleteNotiz", id)
+    const object = {id: id, backlogClicked : state.backlogClicked}
+store.dispatch("deleteNotiz", object)
 }
 
 function updateNotiz(id:Number){
@@ -31,7 +34,8 @@ store.dispatch("updateNotiz", id)
     <p class="text-gray-700 text-base">
       {{ data.text }}
     </p>
-    <div class="date">{{ data.date }}</div>
+    <div class="date">{{
+     data.date }}</div>
     <div id="flexbox">
       <div>
 <button @click ="deleteNotiz(data.id)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-1">

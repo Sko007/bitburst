@@ -11,14 +11,15 @@ const store = createStore({
       clicked:false,
       currentID: 0,
       backlog:[],
-      backlogNotiz:[]
+      backlogNotiz:[],
+      backlogClicked:0
     }
   },
   mutations: {
     addNotiz (state, notiz: any){
       if(state.clicked === true){
         const addNotiz = state.notizen.push(notiz)
-        //state.notiz = []
+        state.notiz = []
         const findIndex = state.notizen.findIndex(notiz => notiz.id == state.currentID)
         state.notizen.splice(findIndex,1)
         //backlog
@@ -35,12 +36,19 @@ const store = createStore({
       }    
       state.clicked = false
     },
-    deleteNotiz (state, id) {
-      const findIndex = state.notizen.findIndex(notiz => notiz.id == id)
+    deleteNotiz (state, object) {
+      console.log(object)
+      if(object.backlogClicked !== true){
+
+
+      const findIndex = state.notizen.findIndex(notiz => notiz.id == object.id)
       state.notizen.splice(findIndex,1)
-      //backlog
-      const findIndexBacklog = state.backlog.findIndex(notiz => notiz.id == id)
+    }else{
+const findIndexBacklog = state.backlog.findIndex(notiz => notiz.id == object.id)
       state.backlog.splice(findIndexBacklog,1)
+    }
+    //backlog
+      
     },
     
     updateNotiz(state, id){

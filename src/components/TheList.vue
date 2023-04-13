@@ -1,17 +1,23 @@
 <script setup lang="ts">
 import { useStore } from 'vuex';
-import {ref} from 'vue'
-import { FadeInOut } from 'vue3-transitions'
+import {ref, reactive} from 'vue'
 
+const state = reactive({
+  currentId:0,
+  show: false,
+  id: 0
+
+})
 
 const store = useStore()
 let dataItems = store.state.notizen
-let show = ref(false);
-let currentId = ref(0) 
-function isOpen (id) {
-currentId.value = id
-  console.log(show, show.value, currentId)
-  show.value = !show.value
+//let show = ref(true);
+//let currentId = ref(0) 
+function isOpen (id: number) {
+  console.log(id)
+  
+state.currentId = id
+  state.show = !state.show
 };
 
 function changeClass(data: any){
@@ -80,10 +86,14 @@ store.dispatch("updateNotiz", id)
   </div>       
     
   </div>
-  <div class="flexbox">  <div
-        v-if="currentId === data.id"
-        v-show="show === true"
-        class="abs left-0 py-2 mt-2 bg-blue-600 rounded-md shadow-xl "
+  <div>
+    <div>
+  <div class="flexbox"> 
+     <div
+        v-show="state.show"
+        v-if="state.currentId === data.id"
+
+        class=" flexbox1 abs left-0 py-2 mt-2 bg-blue-600 rounded-md shadow-xl "
       >
       
           <button  class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" @click="changeClass(data)">done</button>
@@ -93,10 +103,11 @@ store.dispatch("updateNotiz", id)
         
       </div>
     </div>
-
+  </div>
 
   </div>
 
+</div>
 
   
 
@@ -109,8 +120,7 @@ store.dispatch("updateNotiz", id)
   display:flex;
   justify-content: center;
 position: static;
-z-index:99999999999999999999999999999999999999999999999999999999999999999999;
-align-items: flex-end;
+align-self: flex-end;
 
 }
 
@@ -125,7 +135,7 @@ align-items: flex-end;
 #flexbox1{
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content:flex-start;
 
 
 }
