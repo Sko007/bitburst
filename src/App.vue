@@ -7,9 +7,11 @@ import TheBacklog from "./components/TheBacklog.vue"
 <template>
     
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/Capture.png" width="125" height="125" />
+    <div class="margin">    <img alt="Bitburst logo" class="logo" src="@/assets/Capture.png" width="125" height="125" />
+    </div>
 
     <div class="wrapper">
+
       <nav> 
    <div class="center">
    <RouterLink class="router" to="/">Home</RouterLink>
@@ -33,7 +35,10 @@ header {
   max-height: 100vh;
 }
 
+.margin{
+  margin-top: 2.5rem;
 
+}
 .router{
 
   color:black;
@@ -46,7 +51,7 @@ opacity: 0.6;
 }
 .logo {
   display: block;
-  margin: 0 auto 0rem;
+  margin-top:2px;
 }
 
 nav {
