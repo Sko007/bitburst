@@ -10,6 +10,12 @@ import TheBacklog from "./components/TheBacklog.vue"
     <img alt="Vue logo" class="logo" src="@/assets/Capture.png" width="125" height="125" />
 
     <div class="wrapper">
+      <nav> 
+   <div class="center">
+   <RouterLink class="router" to="/">Home</RouterLink>
+   <RouterLink class="router" to="backlog">Backlog</RouterLink>
+  </div>
+ </nav>
       <TheInputForm />
       
     </div>
@@ -18,12 +24,7 @@ import TheBacklog from "./components/TheBacklog.vue"
  
 
   <RouterView ></RouterView>
-  <nav> 
-   
-    <RouterLink class="router" to="/">Home</RouterLink>
-    <RouterLink class="router" to="backlog">Backlog</RouterLink>
-
-  </nav>
+  
 </template>
 
 <style scoped>
@@ -45,13 +46,14 @@ opacity: 0.6;
 }
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin: 0 auto 0rem;
 }
 
 nav {
   width: 100%;
   font-size: 12px;
-  text-align: center;
+  display:flex;
+  justify-content: center;
   margin-top: 2rem;
 }
 
@@ -68,7 +70,13 @@ nav a {
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
 }
-
+.wrapper {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-self:center;
+}
 nav a:first-of-type {
   border: 0;
 }
@@ -92,10 +100,10 @@ nav a:first-of-type {
   }
 
   nav {
-    text-align: left;
+    text-align: center;
     margin-left: -1rem;
     font-size: 1rem;
-
+    
     padding: 1rem 0;
     margin-top: 1rem;
   }

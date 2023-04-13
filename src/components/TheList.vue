@@ -142,7 +142,7 @@ align-self: flex-end;
 .active{
   color:black;
   opacity: 0.8;
-  /* background-color:#EEEEEE; */
+  background-color:#EEEEEE;
   text-decoration: line-through;
 
 

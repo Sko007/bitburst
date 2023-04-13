@@ -66,7 +66,7 @@ const findIndexBacklog = state.backlog.findIndex(notiz => notiz.id == object.id)
       
     },
     addToBacklog(state, id){
-      state.backlog = []
+      //state.backlog = []
       console.log("check the backlog", id)
       const indexOfNotiz = state.notizen.findIndex(notiz => notiz.id == id)
       state.backlog.push(state.notizen[indexOfNotiz])

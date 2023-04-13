@@ -17,7 +17,7 @@ watch(() => store.state.clicked, function() {
       console.log('value changes detected',store.state.notiz);
       form.headline = store.state.notiz.headline
       form.text = store.state.notiz.text
-      
+
    });
 
 computed(() => store.state.clicked)
@@ -66,7 +66,7 @@ store.dispatch("addNotiz", {id:form.id, headline:form.headline, text:form.text, 
 </script>
 
 <template>
-  <div class="greetings mt-16">
+  <div class="greetings mt-2">
     <div class="w-full max-w-xs">
   <form type="submit" class="bg-white rounded  mb-4">
     <div class="mb-4">
