@@ -48,10 +48,10 @@ store.dispatch("updateNotiz", id)
     <div class="date">{{ data.date }}</div>
     <div id="flexbox">
       <div>
-    <button @click="updateNotiz(data.id)"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    <button @click="updateNotiz(data.id)"  class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
   Update
 </button>
-<button @click ="deleteNotiz(data.id)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-1">
+<button @click ="deleteNotiz(data.id)" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-1">
   Delete
 </button>
 </div>
@@ -62,7 +62,7 @@ store.dispatch("updateNotiz", id)
       <!-- Dropdown toggle button -->
       <button
         @click="isOpen(data.id)"
-        class="flex items-center p-2 text-indigo-100 bg-blue-700 rounded-md"
+        class="flex items-center p-2 text-indigo-100 bg-blue-600 rounded-md"
       >
         <span class="mr-4"></span>
         <svg
@@ -103,7 +103,7 @@ store.dispatch("updateNotiz", id)
         
       </div>
     </div>
-  </div>
+  </div> 
 
   </div>
 
