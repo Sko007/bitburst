@@ -55,6 +55,7 @@ nav {
   display:flex;
   justify-content: center;
   margin-top: 2rem;
+  margin-right:4rem;
 }
 
 nav a.router-link-exact-active {
