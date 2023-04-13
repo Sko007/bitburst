@@ -86,8 +86,6 @@ store.dispatch("updateNotiz", id)
   </div>       
     
   </div>
-  <div>
-    <div>
   <div class="flexbox"> 
      <div
         v-show="state.show"
@@ -95,15 +93,15 @@ store.dispatch("updateNotiz", id)
 
         class=" flexbox1 abs left-0 py-2 mt-2 bg-blue-600 rounded-md shadow-xl "
       >
+      <div>
       
           <button  class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" @click="changeClass(data)">done</button>
         
           <button  class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" @click="backlog(data.id)">Backlog</button>
         
+        </div>
         
       </div>
-    </div>
-  </div> 
 
   </div>
 
