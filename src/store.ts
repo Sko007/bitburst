@@ -58,6 +58,7 @@ const store = createStore({
       
     },
     addToBacklog(state, id){
+      state.backlog = []
       console.log("check the backlog", id)
       const indexOfNotiz = state.notizen.findIndex(notiz => notiz.id == id)
       state.backlog.push(state.notizen[indexOfNotiz])

@@ -10,7 +10,7 @@ let show = ref(false);
 let currentId = 0
 function isOpen (id) {
 currentId = id
-  
+  console.log(show, show.value)
   show.value = !show.value};
 function changeClass(data: any){
 data.done =!data.done
@@ -48,7 +48,7 @@ store.dispatch("updateNotiz", id)
 </button>
 </div>
 
-<div>
+<div class="flexbox1">
   
     <div class="relative">
       <!-- Dropdown toggle button -->
@@ -72,22 +72,25 @@ store.dispatch("updateNotiz", id)
       </button>
 
       <!-- Dropdown menu -->
-      <div
+      
+    </div>
+    
+  </div>       
+    
+  </div>
+  <div class="flexbox">  <div
         v-if="currentId === data.id"
         v-show="show"
-        class="abs absolute right-0 py-2 mt-2 bg-blue-700 rounded-md shadow-xl  w-44"
+        class="abs left-0 py-2 mt-2 bg-blue-600 rounded-md shadow-xl "
       >
       
-          <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="changeClass(data)">done</button>
+          <button  class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" @click="changeClass(data)">done</button>
         
-          <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="backlog(data.id)">Backlog</button>
+          <button  class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" @click="backlog(data.id)">Backlog</button>
         
         
       </div>
     </div>
-  </div>       
-    
-  </div>
 
 
   </div>
@@ -100,9 +103,12 @@ store.dispatch("updateNotiz", id)
 
 <style>
 .abs{
+
   display:flex;
-position: fixed;
+  justify-content: center;
+position: static;
 z-index:99999999999999999999999999999999999999999999999999999999999999999999;
+align-items: flex-end;
 
 }
 
@@ -110,6 +116,14 @@ z-index:99999999999999999999999999999999999999999999999999999999999999999999;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-end;
+
+
+}
+#flexbox1{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
 
 
 }
